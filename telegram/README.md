@@ -5,6 +5,8 @@ On the first run will request code confirmation to login on the device as sender
 
 ## Usage
 
+To obtain app-id and app-hash follow these steps: https://telegra.ph/How-to-get-Telegram-APP-ID--API-HASH-05-27.
+
 ```bash
 ./gradlew clean installDist
 
