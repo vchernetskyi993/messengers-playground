@@ -12,5 +12,5 @@ TELEGRAM_API_ID=<app id> \
   TELEGRAM_API_HASH=<app hash> \
   APP_SENDER_PHONE=<sender number> \
   APP_RECEIVER_PHONE=<receiver number> \
-  ./build/install/tdlight/bin/telegram
+  ./build/install/telegram/bin/telegram
 ```
