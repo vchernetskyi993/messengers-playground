@@ -1,6 +1,7 @@
 package com.example
 
 import it.tdlight.common.ExceptionHandler
+import it.tdlight.common.Init
 import it.tdlight.common.ResultHandler
 import it.tdlight.common.TelegramClient
 import it.tdlight.jni.TdApi
@@ -16,6 +17,7 @@ val client: TelegramClient = ClientManager.create()
 private val log: Logger = LoggerFactory.getLogger("com.example.Client")
 
 suspend fun initializeClient() {
+    Init.start()
     Mono.create { authorized ->
         client.initialize(onUpdate(authorized), onError, onError)
     }.awaitSingleOrNull()

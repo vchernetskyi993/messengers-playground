@@ -53,9 +53,7 @@ fun onAuth(state: TdApi.AuthorizationState, authorized: MonoSink<Unit>) {
                 onAuthResult("Password verified")
             )
         }
-        is TdApi.AuthorizationStateReady -> {
-            authorized.success()
-        }
+        is TdApi.AuthorizationStateReady -> authorized.success()
         else -> log.warn("Auth state $state not supported")
     }
 }
