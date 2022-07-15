@@ -28,6 +28,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktorVersion")
     implementation("io.ktor:ktor-server-netty-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-server-thymeleaf:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("com.github.kotlin-telegram-bot.kotlin-telegram-bot:telegram:6.0.7")
 

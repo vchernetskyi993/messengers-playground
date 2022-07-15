@@ -9,6 +9,7 @@ import com.github.kotlintelegrambot.entities.ChatId
 import com.github.kotlintelegrambot.webhook
 
 data class BotSettings(
+    val name: String,
     val token: String,
     val url: String,
 )

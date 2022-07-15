@@ -12,7 +12,10 @@ Implemented using [ktor](https://ktor.io/) and [kotlin-telegram-bot](https://git
 ```shell
 ./gradlew clean installDist
 
-TELEGRAM_TOKEN=<bot api token> TELEGRAM_WEBHOOK_URL=<https webhook url> build/install/tg-login-widget/bin/tg-login-widget
+TELEGRAM_BOT=<bot name> \
+  TELEGRAM_TOKEN=<bot api token> \
+  TELEGRAM_WEBHOOK_URL=<https webhook url> \
+  build/install/tg-login-widget/bin/tg-login-widget
 ```
 
 To interact with your application Telegram requires publicly accessible https url.
