@@ -8,4 +8,5 @@ object Settings {
     val telegramApiHash: String = conf.getString("telegram.api.hash")
     val senderPhone: String = conf.getString("app.senderPhone")
     val receiverPhone: String = conf.getString("app.receiverPhone")
+    val bot: String = conf.getString("app.bot")
 }

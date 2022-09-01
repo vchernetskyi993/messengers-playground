@@ -27,6 +27,30 @@ private fun onUpdate(authorized: MonoSink<Unit>) = ResultHandler<TdApi.Update> {
 //    log.info("Received update: $update")
     when (update) {
         is TdApi.UpdateAuthorizationState -> onAuth(update.authorizationState, authorized)
+        is TdApi.UpdateNewMessage -> {
+            when (val content = update.message.content) {
+                is TdApi.MessageText -> {
+                    if ("Share phone number" in content.text.text) {
+                        val request = TdApi.SendMessage().apply {
+                            chatId = update.message.chatId
+                            replyToMessageId = update.message.id
+                            inputMessageContent = TdApi.InputMessageContact().apply {
+                                contact = TdApi.Contact().apply {
+                                    phoneNumber = Settings.receiverPhone
+                                }
+                            }
+                        }
+                        client.send(request) {
+                            when (it) {
+                                is TdApi.Error -> log.error("Error ${it.code}: ${it.message}")
+                            }
+                        }
+                    }
+                }
+
+                else -> {}
+            }
+        }
 //        else -> log.warn("Update type ${update.javaClass} not supported")
     }
 }
